@@ -34,8 +34,8 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
         php7-zip \
 				pcre \
     && rm -rf /var/cache/apk/* \
-    && addgroup -S www-data \
-    && adduser -S www-data -h /sbin/nologin -G www-data
+    && addgroup -g 2500 -S www-data \
+    && adduser -u 2500 -S www-data -h /sbin/nologin -G www-data
 
 EXPOSE 9000
 
